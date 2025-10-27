@@ -8,7 +8,7 @@ import Image from "next/image";
 const Sidebar = () => {
   return (
     <>
-      <aside className="bg-[#26262C] h-[633px] w-60 pl-3">
+      <aside className="bg-[#26262C] min-h-screen w-60 pl-3 sticky top-0">
         <div className="flex justify-start">
           <h1 className="text-white text-lg font-normal pt-2 pb-2 ">For You</h1>
         </div>

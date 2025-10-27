@@ -1,0 +1,261 @@
+"use client";
+import React from "react";
+import Image from "next/image";
+import { Heart, Settings, MoreVertical, Users, Eye, Gift } from "lucide-react";
+
+const StreamTab = ({ streamerData }) => {
+  // Default streamer data if none provided
+  const defaultStreamerData = {
+    name: "Livvcore",
+    isVerified: true,
+    title: "AUNTIE IMMO RANKED",
+    game: "VALORANT",
+    tags: ["girlgamers", "girlstreaming", "Valo", "provalorant", "She", "Skyemain", "English", "valorant", "VALORANT", "Canada"],
+    followers: "52.4K",
+    socialLinks: {
+      youtube: "YOUTUBE",
+      instagram: "INSTAGRAM", 
+      twitter: "X",
+      tiktok: "TIK TOK"
+    },
+    goal: {
+      title: "October",
+      description: "Help me earn points to reach Plus Level 2",
+      current: 108,
+      target: 300
+    },
+    viewerCount: "295",
+    duration: "7:08:45"
+  };
+
+  const streamer = streamerData || defaultStreamerData;
+
+  return (
+    <div className="flex h-screen bg-[#0E0E10] w-full overflow-hidden">
+      {/* Main Content Area */}
+      <div className="flex-1 flex flex-col">
+        {/* Video Player Section */}
+        <div className="relative bg-black aspect-video">
+          <video 
+            className="w-full h-full object-cover"
+            controls
+            poster="/cocwallpaper.jpg"
+          >
+            <source src="#" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          
+          {/* Video Overlay Controls */}
+          <div className="absolute bottom-4 right-4 flex items-center space-x-2">
+            <div className="bg-black bg-opacity-70 text-white px-2 py-1 rounded text-sm flex items-center">
+              <Eye className="w-4 h-4 mr-1" />
+              {streamer.viewerCount}
+            </div>
+            <div className="bg-black bg-opacity-70 text-white px-2 py-1 rounded text-sm">
+              {streamer.duration}
+            </div>
+            <Settings className="text-white w-6 h-6 cursor-pointer" />
+            <MoreVertical className="text-white w-6 h-6 cursor-pointer" />
+          </div>
+        </div>
+
+        {/* Stream Info Section */}
+        <div className="bg-[#18181B] p-4">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-lg">L</span>
+              </div>
+              <div>
+                <div className="flex items-center">
+                  <h1 className="text-white text-xl font-bold">{streamer.name}</h1>
+                  {streamer.isVerified && (
+                    <div className="ml-2 w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+                <h2 className="text-white text-lg">{streamer.title}</h2>
+                <div className="flex items-center mt-1">
+                  <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded mr-2">LIVE</span>
+                  <p className="text-gray-300">{streamer.game}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex items-center space-x-3">
+              <Heart className="text-white w-8 h-8 p-1 bg-[#34343B] hover:bg-[#414149] rounded cursor-pointer transition-colors" />
+              <button className="bg-[#A970FF] hover:bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+                Follow
+              </button>
+              <div className="flex items-center">
+                <button className="bg-[#34343B] hover:bg-[#414149] text-white px-4 py-2 rounded-l-lg font-semibold transition-colors flex items-center">
+                  <Gift className="w-4 h-4 mr-1" />
+                  Gift a Sub
+                </button>
+                <button className="bg-[#34343B] hover:bg-[#414149] text-white px-2 py-2 rounded-r-lg border-l border-gray-600 transition-colors">
+                  ▼
+                </button>
+              </div>
+              <button className="bg-[#34343B] hover:bg-[#414149] text-white px-4 py-2 rounded-lg font-semibold transition-colors">
+                Subscribe
+              </button>
+              <MoreVertical className="text-white w-6 h-6 cursor-pointer" />
+            </div>
+          </div>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {streamer.tags.map((tag, index) => (
+              <span
+                key={index}
+                className="bg-[#34343B] hover:bg-[#414149] text-gray-300 text-sm px-3 py-1 rounded-full cursor-pointer transition-colors"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* About Section */}
+        <div className="bg-[#18181B] p-4 border-t border-gray-700">
+          <h3 className="text-white text-lg font-bold mb-3">About {streamer.name}</h3>
+          <div className="flex items-center mb-4">
+            <Users className="w-4 h-4 text-gray-400 mr-2" />
+            <span className="text-white font-semibold">{streamer.followers} followers</span>
+          </div>
+          <p className="text-gray-300 mb-4">
+            Business Inquiries: {streamer.name.toLowerCase()}@lockedtalent.com
+          </p>
+          
+          {/* Social Links */}
+          <div className="grid grid-cols-2 gap-2 max-w-md">
+            {Object.entries(streamer.socialLinks).map(([platform, handle]) => (
+              <div key={platform} className="flex items-center bg-[#34343B] hover:bg-[#414149] px-3 py-2 rounded cursor-pointer transition-colors">
+                <div className="w-6 h-6 bg-gray-600 rounded mr-3"></div>
+                <span className="text-white text-sm">{handle}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Chat Section */}
+      <div className="w-96 bg-[#18181B] flex flex-col border-l border-gray-700">
+        {/* Chat Header */}
+        <div className="p-4 border-b border-gray-700">
+          <h3 className="text-white font-bold text-lg">Stream Chat</h3>
+          <div className="flex items-center mt-2 text-sm text-gray-400">
+            <span className="mr-4">👑 allina... 🎁 50</span>
+            <span className="mr-4">🛡️ se... 🎁 40</span>
+            <span>👑 adrianv</span>
+          </div>
+        </div>
+
+        {/* Promotion Banner */}
+        <div className="bg-purple-600 p-3 m-4 rounded-lg">
+          <div className="flex items-center">
+            <span className="text-2xl mr-2">👑</span>
+            <div>
+              <p className="text-white font-bold text-sm">Get cred when you share a viral clip!</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Chat Messages */}
+        <div className="flex-1 overflow-y-auto px-4 space-y-2">
+          <div className="flex items-start space-x-2">
+            <span className="text-gray-400 text-xs">7:39</span>
+            <span className="text-yellow-400 font-bold text-sm">amoneyxc:</span>
+            <span className="text-white text-sm">WE TAKE THAT</span>
+          </div>
+          
+          <div className="flex items-start space-x-2">
+            <span className="text-gray-400 text-xs">7:39</span>
+            <span className="text-orange-400 font-bold text-sm">🔸 👑 milikarose:</span>
+            <span className="text-white text-sm">accidented the guy LMFAO</span>
+          </div>
+
+          <div className="flex items-start space-x-2">
+            <span className="text-gray-400 text-xs">7:39</span>
+            <span className="text-pink-400 font-bold text-sm">🌸 ProfessorVic:</span>
+            <span className="text-white text-sm">idk I can't find u</span>
+          </div>
+
+          <div className="flex items-start space-x-2">
+            <span className="text-gray-400 text-xs">7:40</span>
+            <span className="text-blue-400 font-bold text-sm">✅ 🤖 Nightbot:</span>
+            <span className="text-white text-sm">Follow my socials IG: https://www.instagram.com/livvcotee/?hl=en // Tik Tok: https://www.tiktok.com/@livvcotee?witch?_t=7SsRvduVwXsVA8_r=1 // Twitter: https://twitter.com/livvcotee // Youtube: https://www.youtube.com/@livvcotee</span>
+          </div>
+
+          <div className="flex items-start space-x-2">
+            <span className="text-gray-400 text-xs">7:41</span>
+            <span className="text-pink-400 font-bold text-sm">🌸 ProfessorVic:</span>
+            <span className="text-white text-sm">oh u know it's bad when that happens</span>
+          </div>
+
+          <div className="flex items-start space-x-2">
+            <span className="text-gray-400 text-xs">7:43</span>
+            <span className="text-yellow-400 font-bold text-sm">amoneyxc:</span>
+            <span className="text-white text-sm">I'm gonna go make buldak I better not come back to a closed stream or hidden screen</span>
+          </div>
+
+          <div className="flex items-start space-x-2">
+            <span className="text-gray-400 text-xs">7:43</span>
+            <span className="text-yellow-400 font-bold text-sm">amoneyxc:</span>
+            <span className="text-white text-sm">Ok? Ok</span>
+          </div>
+
+          <div className="text-center py-4">
+            <span className="text-purple-400 text-sm">Welcome to the chat room!</span>
+          </div>
+        </div>
+
+        {/* Chat Input */}
+        <div className="p-4 border-t border-gray-700">
+          <div className="flex items-center bg-[#34343B] rounded-lg">
+            <input
+              type="text"
+              placeholder="Send a message"
+              className="flex-1 bg-transparent text-white px-3 py-2 outline-none placeholder-gray-400"
+            />
+            <div className="flex items-center px-2">
+              <Settings className="w-5 h-5 text-gray-400 cursor-pointer" />
+            </div>
+          </div>
+          <div className="flex items-center justify-between mt-2 text-xs text-gray-400">
+            <span>💜 0 💎 0</span>
+            <Settings className="w-4 h-4 cursor-pointer" />
+          </div>
+        </div>
+
+        {/* Plus Goal Section */}
+        <div className="p-4 border-t border-gray-700 bg-[#1a1a1d]">
+          <div className="flex items-center justify-between mb-2">
+            <h4 className="text-white font-bold">Plus Goal</h4>
+            <span className="text-gray-400 text-sm">ℹ️</span>
+          </div>
+          <div className="mb-2">
+            <h5 className="text-white font-semibold">{streamer.goal.title}</h5>
+            <p className="text-gray-300 text-sm">{streamer.goal.description}</p>
+          </div>
+          <div className="bg-gray-700 rounded-full h-2 mb-2">
+            <div 
+              className="bg-purple-600 h-2 rounded-full transition-all duration-300"
+              style={{ width: `${(streamer.goal.current / streamer.goal.target) * 100}%` }}
+            ></div>
+          </div>
+          <div className="flex justify-between text-sm">
+            <span className="text-white">{streamer.goal.current}</span>
+            <span className="text-gray-400">{streamer.goal.target}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default StreamTab;

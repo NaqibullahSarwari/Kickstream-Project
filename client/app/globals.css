@@ -1,2 +1,19 @@
 @import "tailwindcss";
 
+/* Ensure no white backgrounds anywhere */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0E0E10 !important;
+  color: white;
+}
+
+/* Remove any default browser styling that might show white */
+div, main, section, article {
+  background-color: transparent;
+}
+
