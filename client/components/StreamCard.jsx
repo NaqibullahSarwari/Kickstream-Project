@@ -7,7 +7,6 @@ import mayuwiiLogo from "../public/Mayuwii.jpg";
 import tubboLogo from "../public/tubbo-logo.png";
 
 const StreamCard = () => {
-  // Sample stream data
   const streams = [
     {
       id: 1,
@@ -19,7 +18,7 @@ const StreamCard = () => {
       slug: "livvcore",
       isVerified: true,
       game: "VALORANT",
-      tags: ["Canada", "VALORANT", "English"]
+      tags: ["Canada", "VALORANT", "English"],
     },
     {
       id: 2,
@@ -31,7 +30,7 @@ const StreamCard = () => {
       slug: "spookytimepizza",
       isVerified: true,
       game: "Phasmophobia",
-      tags: ["Phasmophobia", "Pizza", "Chaotic"]
+      tags: ["Phasmophobia", "Pizza", "Chaotic"],
     },
     {
       id: 3,
@@ -43,7 +42,7 @@ const StreamCard = () => {
       slug: "charlottemunster",
       isVerified: false,
       game: "The Cabin Factory",
-      tags: ["booba", "spotthedifference", "Tattoos"]
+      tags: ["booba", "spotthedifference", "Tattoos"],
     },
     {
       id: 4,
@@ -55,62 +54,57 @@ const StreamCard = () => {
       slug: "ironmouse",
       isVerified: true,
       game: "Just Chatting",
-      tags: ["PuertoRico", "vtuber", "latino"]
-    }
+      tags: ["PuertoRico", "vtuber", "latino"],
+    },
   ];
 
   const SingleStreamCard = ({ stream }) => {
     return (
       <Link href={`/${stream.slug}`} className="block">
         <div className="bg-[#18181B] rounded-lg overflow-hidden max-w-sm hover:bg-[#1f1f23] transition-colors duration-200 cursor-pointer">
-          {/* Thumbnail Section */}
           <div className="relative group">
             <Image
               src={stream.thumbnail}
               alt={stream.title}
               className="w-full h-48 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
             />
-            
-            {/* Live Badge */}
             {stream.isLive && (
               <div className="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
                 LIVE
               </div>
             )}
-            
-            {/* Viewer Count */}
             <div className="absolute bottom-2 left-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
               {stream.viewerCount}
             </div>
           </div>
-
-          {/* Content Section */}
           <div className="p-3">
             {/* Stream Title */}
             <h3 className="text-white text-sm font-medium mb-2 line-clamp-2 hover:text-[#A970FF] transition-colors duration-200">
               {stream.title}
             </h3>
-            
-            {/* Streamer Info */}
             <div className="flex items-center mb-2">
               <p className="text-gray-300 text-sm hover:text-[#A970FF] transition-colors duration-200">
                 {stream.streamer}
               </p>
               {stream.isVerified && (
                 <div className="ml-1 w-4 h-4 bg-purple-600 rounded-full flex items-center justify-center">
-                  <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <svg
+                    className="w-2.5 h-2.5 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 </div>
               )}
             </div>
-            
-            {/* Game/Category */}
             <p className="text-gray-400 text-sm mb-3 hover:text-[#A970FF] transition-colors duration-200">
               {stream.game}
             </p>
-            
-            {/* Tags */}
             <div className="flex flex-wrap gap-1">
               {stream.tags.map((tag, index) => (
                 <span
@@ -129,19 +123,15 @@ const StreamCard = () => {
 
   return (
     <div className="bg-[#0E0E10] p-6">
-      {/* Section Title */}
       <h2 className="text-white text-lg font-semibold mb-4">
         Live channels we think you'll like
       </h2>
-      
-      {/* Stream Cards Grid */}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8">
         {streams.map((stream) => (
           <SingleStreamCard key={stream.id} stream={stream} />
         ))}
       </div>
-
-      {/* Show More Button */}
       <div className="flex justify-center">
         <button className="text-[#A970FF] text-sm font-medium hover:text-white transition-colors duration-200">
           Show more ▼
