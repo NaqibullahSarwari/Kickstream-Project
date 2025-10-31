@@ -1,7 +1,6 @@
 import StreamTab from "../../components/StreamTab.jsx";
 
 export default function StreamerPage({ params }) {
-  // Stream data based on the streamer name from URL
   const getStreamerData = (streamerName) => {
     const streamersData = {
       livvcore: {
@@ -93,16 +92,12 @@ export default function StreamerPage({ params }) {
         duration: "4:15:22"
       }
     };
-
-    // Safety check for undefined streamerName
     if (!streamerName || typeof streamerName !== 'string') {
       return streamersData.livvcore;
     }
 
     return streamersData[streamerName.toLowerCase()] || streamersData.livvcore;
   };
-
-  // Safety check for params
   const streamerData = getStreamerData(params?.streamer);
 
   return <StreamTab streamerData={streamerData} />;

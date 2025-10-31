@@ -78,7 +78,6 @@ const StreamCard = () => {
             </div>
           </div>
           <div className="p-3">
-            {/* Stream Title */}
             <h3 className="text-white text-sm font-medium mb-2 line-clamp-2 hover:text-[#A970FF] transition-colors duration-200">
               {stream.title}
             </h3>
