@@ -32,9 +32,7 @@ const StreamTab = ({ streamerData }) => {
 
   return (
     <div className="flex h-screen bg-[#0E0E10] w-full overflow-hidden">
-      {/* Main Content Area */}
       <div className="flex-1 flex flex-col">
-        {/* Video Player Section */}
         <div className="relative bg-black aspect-video">
           <video 
             className="w-full h-full object-cover"
@@ -45,7 +43,6 @@ const StreamTab = ({ streamerData }) => {
             Your browser does not support the video tag.
           </video>
           
-          {/* Video Overlay Controls */}
           <div className="absolute bottom-4 right-4 flex items-center space-x-2">
             <div className="bg-black bg-opacity-70 text-white px-2 py-1 rounded text-sm flex items-center">
               <Eye className="w-4 h-4 mr-1" />
@@ -58,8 +55,6 @@ const StreamTab = ({ streamerData }) => {
             <MoreVertical className="text-white w-6 h-6 cursor-pointer" />
           </div>
         </div>
-
-        {/* Stream Info Section */}
         <div className="bg-[#18181B] p-4">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center space-x-4">
@@ -84,8 +79,6 @@ const StreamTab = ({ streamerData }) => {
                 </div>
               </div>
             </div>
-
-            {/* Action Buttons */}
             <div className="flex items-center space-x-3">
               <Heart className="text-white w-8 h-8 p-1 bg-[#34343B] hover:bg-[#414149] rounded cursor-pointer transition-colors" />
               <button className="bg-[#A970FF] hover:bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
@@ -106,8 +99,6 @@ const StreamTab = ({ streamerData }) => {
               <MoreVertical className="text-white w-6 h-6 cursor-pointer" />
             </div>
           </div>
-
-          {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-4">
             {streamer.tags.map((tag, index) => (
               <span
@@ -119,8 +110,6 @@ const StreamTab = ({ streamerData }) => {
             ))}
           </div>
         </div>
-
-        {/* About Section */}
         <div className="bg-[#18181B] p-4 border-t border-gray-700">
           <h3 className="text-white text-lg font-bold mb-3">About {streamer.name}</h3>
           <div className="flex items-center mb-4">
@@ -130,9 +119,7 @@ const StreamTab = ({ streamerData }) => {
           <p className="text-gray-300 mb-4">
             Business Inquiries: {streamer.name.toLowerCase()}@lockedtalent.com
           </p>
-          
-          {/* Social Links */}
-          <div className="grid grid-cols-2 gap-2 max-w-md">
+                    <div className="grid grid-cols-2 gap-2 max-w-md">
             {Object.entries(streamer.socialLinks).map(([platform, handle]) => (
               <div key={platform} className="flex items-center bg-[#34343B] hover:bg-[#414149] px-3 py-2 rounded cursor-pointer transition-colors">
                 <div className="w-6 h-6 bg-gray-600 rounded mr-3"></div>
@@ -142,10 +129,7 @@ const StreamTab = ({ streamerData }) => {
           </div>
         </div>
       </div>
-
-      {/* Chat Section */}
       <div className="w-96 bg-[#18181B] flex flex-col border-l border-gray-700">
-        {/* Chat Header */}
         <div className="p-4 border-b border-gray-700">
           <h3 className="text-white font-bold text-lg">Stream Chat</h3>
           <div className="flex items-center mt-2 text-sm text-gray-400">
@@ -154,8 +138,6 @@ const StreamTab = ({ streamerData }) => {
             <span>👑 adrianv</span>
           </div>
         </div>
-
-        {/* Promotion Banner */}
         <div className="bg-purple-600 p-3 m-4 rounded-lg">
           <div className="flex items-center">
             <span className="text-2xl mr-2">👑</span>
@@ -164,8 +146,6 @@ const StreamTab = ({ streamerData }) => {
             </div>
           </div>
         </div>
-
-        {/* Chat Messages */}
         <div className="flex-1 overflow-y-auto px-4 space-y-2">
           <div className="flex items-start space-x-2">
             <span className="text-gray-400 text-xs">7:39</span>
@@ -213,8 +193,6 @@ const StreamTab = ({ streamerData }) => {
             <span className="text-purple-400 text-sm">Welcome to the chat room!</span>
           </div>
         </div>
-
-        {/* Chat Input */}
         <div className="p-4 border-t border-gray-700">
           <div className="flex items-center bg-[#34343B] rounded-lg">
             <input
@@ -232,7 +210,6 @@ const StreamTab = ({ streamerData }) => {
           </div>
         </div>
 
-        {/* Plus Goal Section */}
         <div className="p-4 border-t border-gray-700 bg-[#1a1a1d]">
           <div className="flex items-center justify-between mb-2">
             <h4 className="text-white font-bold">Plus Goal</h4>
