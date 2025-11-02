@@ -1,4 +1,4 @@
-import StreamTab from "../../components/StreamTab.jsx";
+import StreamTab from "../components/StreamTab.jsx";
 
 export default function StreamerPage({ params }) {
   const getStreamerData = (streamerName) => {

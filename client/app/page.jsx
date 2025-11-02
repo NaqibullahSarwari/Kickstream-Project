@@ -1,4 +1,4 @@
-import StreamCard from "../components/StreamCard.jsx";
+import StreamCard from "./components/StreamCard.jsx";
 
 export default function Home() {
   return (
