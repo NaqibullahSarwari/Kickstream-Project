@@ -10,6 +10,7 @@ html, body {
   padding: 0;
   background-color: #0E0E10 !important;
   color: white;
+  overflow-x: hidden;
 }
 
 /* Remove any default browser styling that might show white */

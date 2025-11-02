@@ -1,11 +1,22 @@
 ### Todo List
 
 [x] Complete Installation
-[x] Build the Register/Login Page
+[] Build the Register/Login Page
 [x] Build the Navar
 [x] Build the Sidebar
 [x] Build the Home Section
 [x] Build the Watching stream section
+[] Build the Dashboard Page
+    [] Build the Stream Section
+    [] Build the Keys Section
+    [] Build the Chat Section
+    [] Build the Community Section
+[] Build the Go Live Button
+[] Custom Video Ingestion & Encoding Pipeline 
+[] Analytics & Monitoring Pipeline 
+[] Interactive Streaming (Live Reactivity Layer)
+[] Build a good-looking, awosome frontend with animations, design, transition and so on
+[] Build the Video Description Feature
 
 Main colors used in the porject.
 1. #0E0E10 - Background
@@ -14,4 +25,5 @@ Main colors used in the porject.
 4. #FF4F00 - Main Color
 5. #34343B - Button Background
 5. #8B8B8F - Sidebar Text Color
-5. #A970FF - 
+5. #A970FF 
+6. #2e2e33

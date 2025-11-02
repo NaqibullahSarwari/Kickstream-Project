@@ -1,13 +1,14 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link"
 import twitchIcon from "../public/Twitch-Icon.png";
-import { MoreVertical, Search, Camera } from "lucide-react";
+import { MoreVertical, Search } from "lucide-react";
 
 const Navbar = () => {
   return (
     <>
-      <nav className="bg-[#18181B] flex justify-between items-center h-14 w-screen">
+      <nav className="bg-[#18181B] flex justify-between items-center h-14 w-full">
         <div className="flex justify-between space-x-8 ml-3">
           <Image alt="Twitch Icon" src={twitchIcon} className="h-8 w-8" />
           <h1 className="text-white font-semibold text-md">Following</h1>
@@ -25,19 +26,20 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex justify-around space-x-4 mr-3">
-          <div className="flex justify-center items-center bg-[#34343B] hover:bg-[#414149] h-9 w-27 rounded-3xl">
-            <Camera className="text-white font-xl h-4" />
-            <button className="text-white font-semibold text-sm">
+          <div className="flex justify-center   rounded-3xl">
+            <Link href="/dashboard">
+            <button className="text-white font-semibold text-sm bg-[#34343B] hover:bg-[#46464f] rounded-3xl h-9 w-27 ">
               Dashboard
             </button>
+            </Link>
           </div>
           <div className="flex justify-center items-center bg-[#34343B] hover:bg-[#414149] h-9 w-18 rounded-3xl">
-            <button className="text-white font-semibold text-sm">
+            <button className="text-white font-semibold text-sm bg-[#34343B] hover:bg-[#46464f] rounded-3xl h-9 w-27">
               Register
             </button>
           </div>
           <div className="flex justify-center items-center bg-[#34343B] hover:bg-[#414149] h-9 w-15 rounded-3xl">
-            <button className="text-white font-semibold text-sm">Login</button>
+            <button className="text-white font-semibold text-sm bg-[#34343B] hover:bg-[#46464f] rounded-3xl h-9 w-27">Login</button>
           </div>
         </div>
       </nav>
