@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { Heart, Settings, MoreVertical, Users, Eye, Gift } from "lucide-react";
 
 const StreamTab = ({ streamerData }) => {
@@ -10,22 +9,33 @@ const StreamTab = ({ streamerData }) => {
     isVerified: true,
     title: "AUNTIE IMMO RANKED",
     game: "VALORANT",
-    tags: ["girlgamers", "girlstreaming", "Valo", "provalorant", "She", "Skyemain", "English", "valorant", "VALORANT", "Canada"],
+    tags: [
+      "girlgamers",
+      "girlstreaming",
+      "Valo",
+      "provalorant",
+      "She",
+      "Skyemain",
+      "English",
+      "valorant",
+      "VALORANT",
+      "Canada",
+    ],
     followers: "52.4K",
     socialLinks: {
       youtube: "YOUTUBE",
-      instagram: "INSTAGRAM", 
+      instagram: "INSTAGRAM",
       twitter: "X",
-      tiktok: "TIK TOK"
+      tiktok: "TIK TOK",
     },
     goal: {
       title: "October",
       description: "Help me earn points to reach Plus Level 2",
       current: 108,
-      target: 300
+      target: 300,
     },
     viewerCount: "295",
-    duration: "7:08:45"
+    duration: "7:08:45",
   };
 
   const streamer = streamerData || defaultStreamerData;
@@ -34,7 +44,7 @@ const StreamTab = ({ streamerData }) => {
     <div className="flex h-screen bg-[#0E0E10] w-full overflow-hidden">
       <div className="flex-1 flex flex-col">
         <div className="relative bg-black aspect-video">
-          <video 
+          <video
             className="w-full h-full object-cover"
             controls
             poster="/cocwallpaper.jpg"
@@ -42,7 +52,7 @@ const StreamTab = ({ streamerData }) => {
             <source src="#" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          
+
           <div className="absolute bottom-4 right-4 flex items-center space-x-2">
             <div className="bg-black bg-opacity-70 text-white px-2 py-1 rounded text-sm flex items-center">
               <Eye className="w-4 h-4 mr-1" />
@@ -63,18 +73,30 @@ const StreamTab = ({ streamerData }) => {
               </div>
               <div>
                 <div className="flex items-center">
-                  <h1 className="text-white text-xl font-bold">{streamer.name}</h1>
+                  <h1 className="text-white text-xl font-bold">
+                    {streamer.name}
+                  </h1>
                   {streamer.isVerified && (
                     <div className="ml-2 w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center">
-                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      <svg
+                        className="w-3 h-3 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
                       </svg>
                     </div>
                   )}
                 </div>
                 <h2 className="text-white text-lg">{streamer.title}</h2>
                 <div className="flex items-center mt-1">
-                  <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded mr-2">LIVE</span>
+                  <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded mr-2">
+                    LIVE
+                  </span>
                   <p className="text-gray-300">{streamer.game}</p>
                 </div>
               </div>
@@ -111,17 +133,24 @@ const StreamTab = ({ streamerData }) => {
           </div>
         </div>
         <div className="bg-[#18181B] p-4 border-t border-gray-700">
-          <h3 className="text-white text-lg font-bold mb-3">About {streamer.name}</h3>
+          <h3 className="text-white text-lg font-bold mb-3">
+            About {streamer.name}
+          </h3>
           <div className="flex items-center mb-4">
             <Users className="w-4 h-4 text-gray-400 mr-2" />
-            <span className="text-white font-semibold">{streamer.followers} followers</span>
+            <span className="text-white font-semibold">
+              {streamer.followers} followers
+            </span>
           </div>
           <p className="text-gray-300 mb-4">
             Business Inquiries: {streamer.name.toLowerCase()}@lockedtalent.com
           </p>
-                    <div className="grid grid-cols-2 gap-2 max-w-md">
+          <div className="grid grid-cols-2 gap-2 max-w-md">
             {Object.entries(streamer.socialLinks).map(([platform, handle]) => (
-              <div key={platform} className="flex items-center bg-[#34343B] hover:bg-[#414149] px-3 py-2 rounded cursor-pointer transition-colors">
+              <div
+                key={platform}
+                className="flex items-center bg-[#34343B] hover:bg-[#414149] px-3 py-2 rounded cursor-pointer transition-colors"
+              >
                 <div className="w-6 h-6 bg-gray-600 rounded mr-3"></div>
                 <span className="text-white text-sm">{handle}</span>
               </div>
@@ -142,7 +171,9 @@ const StreamTab = ({ streamerData }) => {
           <div className="flex items-center">
             <span className="text-2xl mr-2">👑</span>
             <div>
-              <p className="text-white font-bold text-sm">Get cred when you share a viral clip!</p>
+              <p className="text-white font-bold text-sm">
+                Get cred when you share a viral clip!
+              </p>
             </div>
           </div>
         </div>
@@ -152,35 +183,54 @@ const StreamTab = ({ streamerData }) => {
             <span className="text-yellow-400 font-bold text-sm">amoneyxc:</span>
             <span className="text-white text-sm">WE TAKE THAT</span>
           </div>
-          
+
           <div className="flex items-start space-x-2">
             <span className="text-gray-400 text-xs">7:39</span>
-            <span className="text-orange-400 font-bold text-sm">🔸 👑 milikarose:</span>
+            <span className="text-orange-400 font-bold text-sm">
+              🔸 👑 milikarose:
+            </span>
             <span className="text-white text-sm">accidented the guy LMFAO</span>
           </div>
 
           <div className="flex items-start space-x-2">
             <span className="text-gray-400 text-xs">7:39</span>
-            <span className="text-pink-400 font-bold text-sm">🌸 ProfessorVic:</span>
+            <span className="text-pink-400 font-bold text-sm">
+              🌸 ProfessorVic:
+            </span>
             <span className="text-white text-sm">idk I can't find u</span>
           </div>
 
           <div className="flex items-start space-x-2">
             <span className="text-gray-400 text-xs">7:40</span>
-            <span className="text-blue-400 font-bold text-sm">✅ 🤖 Nightbot:</span>
-            <span className="text-white text-sm">Follow my socials IG: https://www.instagram.com/livvcotee/?hl=en // Tik Tok: https://www.tiktok.com/@livvcotee?witch?_t=7SsRvduVwXsVA8_r=1 // Twitter: https://twitter.com/livvcotee // Youtube: https://www.youtube.com/@livvcotee</span>
+            <span className="text-blue-400 font-bold text-sm">
+              ✅ 🤖 Nightbot:
+            </span>
+            <span className="text-white text-sm">
+              Follow my socials IG: https://www.instagram.com/livvcotee/?hl=en
+              // Tik Tok:
+              https://www.tiktok.com/@livvcotee?witch?_t=7SsRvduVwXsVA8_r=1 //
+              Twitter: https://twitter.com/livvcotee // Youtube:
+              https://www.youtube.com/@livvcotee
+            </span>
           </div>
 
           <div className="flex items-start space-x-2">
             <span className="text-gray-400 text-xs">7:41</span>
-            <span className="text-pink-400 font-bold text-sm">🌸 ProfessorVic:</span>
-            <span className="text-white text-sm">oh u know it's bad when that happens</span>
+            <span className="text-pink-400 font-bold text-sm">
+              🌸 ProfessorVic:
+            </span>
+            <span className="text-white text-sm">
+              oh u know it's bad when that happens
+            </span>
           </div>
 
           <div className="flex items-start space-x-2">
             <span className="text-gray-400 text-xs">7:43</span>
             <span className="text-yellow-400 font-bold text-sm">amoneyxc:</span>
-            <span className="text-white text-sm">I'm gonna go make buldak I better not come back to a closed stream or hidden screen</span>
+            <span className="text-white text-sm">
+              I'm gonna go make buldak I better not come back to a closed stream
+              or hidden screen
+            </span>
           </div>
 
           <div className="flex items-start space-x-2">
@@ -190,7 +240,9 @@ const StreamTab = ({ streamerData }) => {
           </div>
 
           <div className="text-center py-4">
-            <span className="text-purple-400 text-sm">Welcome to the chat room!</span>
+            <span className="text-purple-400 text-sm">
+              Welcome to the chat room!
+            </span>
           </div>
         </div>
         <div className="p-4 border-t border-gray-700">
@@ -220,9 +272,13 @@ const StreamTab = ({ streamerData }) => {
             <p className="text-gray-300 text-sm">{streamer.goal.description}</p>
           </div>
           <div className="bg-gray-700 rounded-full h-2 mb-2">
-            <div 
+            <div
               className="bg-purple-600 h-2 rounded-full transition-all duration-300"
-              style={{ width: `${(streamer.goal.current / streamer.goal.target) * 100}%` }}
+              style={{
+                width: `${
+                  (streamer.goal.current / streamer.goal.target) * 100
+                }%`,
+              }}
             ></div>
           </div>
           <div className="flex justify-between text-sm">

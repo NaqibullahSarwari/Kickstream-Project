@@ -25,7 +25,7 @@ export default function DashboardLayout({ children }) {
 
   return (
     <div className="flex h-screen bg-gray-500 text-white">
-      <aside className="w-64 bg-gray-800 border-r border-gray-700">
+      <aside className="w-64 bg-[#0E0E10] border-r border-gray-700">
         <div className="p-4 border-b border-gray-700">
           <h1 className="text-xl font-bold">Streaming Platform</h1>
         </div>
@@ -42,7 +42,7 @@ export default function DashboardLayout({ children }) {
                     className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                       isActive
                         ? "bg-purple-600 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                        : "text-gray-300 hover:bg-[#26262C] hover:text-white"
                     }`}
                   >
                     <Icon size={20} />

@@ -1,51 +1,16 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import twitchIcon from "../public/Twitch-Icon.png";
-import { MoreVertical, Search } from "lucide-react";
+import SearchBar from "./ui/SearchBar.jsx"
+import LeftSideBar from "./ui/LeftSideBar.jsx";
+import RightSideBar from "./ui/RightSideBar.jsx";
 
 const Navbar = () => {
   return (
     <>
       <nav className="bg-[#18181B] flex justify-between items-center h-14 w-full">
-        <div className="flex justify-between space-x-8 ml-3">
-          <Link href="/">
-            <Image alt="Twitch Icon" src={twitchIcon} className="h-8 w-8" />
-          </Link>
-          <h1 className="text-white font-semibold text-md">Following</h1>
-          <h1 className="text-white font-semibold text-md">Browse</h1>
-          <MoreVertical className="text-white" />
-        </div>
-        <div className="flex justify-end">
-          <input
-            type="search"
-            placeholder="Search"
-            className="text-gray-300 pl-4 font-md bg-[#18181B] outline-none border-2 border-gray-300 h-10 w-90 rounded-tl-lg rounded-bl-lg"
-          />
-          <div className="bg-[#34343B] hover:bg-[#414149] h-10 w-10 flex justify-center items-center rounded-br-lg rounded-tr-lg">
-            <Search className="text-white font-black text-3xl" />
-          </div>
-        </div>
-        <div className="flex justify-around space-x-4 mr-3">
-          <div className="flex justify-center   rounded-3xl">
-            <Link href="/dashboard">
-              <button className="text-white font-semibold text-sm bg-[#34343B] hover:bg-[#46464f] rounded-3xl h-9 w-27 ">
-                Dashboard
-              </button>
-            </Link>
-          </div>
-          <div className="flex justify-center items-center bg-[#34343B] hover:bg-[#414149] h-9 w-18 rounded-3xl">
-            <button className="text-white font-semibold text-sm bg-[#34343B] hover:bg-[#46464f] rounded-3xl h-9 w-27">
-              Register
-            </button>
-          </div>
-          <div className="flex justify-center items-center bg-[#34343B] hover:bg-[#414149] h-9 w-15 rounded-3xl">
-            <button className="text-white font-semibold text-sm bg-[#34343B] hover:bg-[#46464f] rounded-3xl h-9 w-27">
-              Login
-            </button>
-          </div>
-        </div>
+       <LeftSideBar/>
+       <SearchBar/>
+       <RightSideBar/>
       </nav>
     </>
   );
