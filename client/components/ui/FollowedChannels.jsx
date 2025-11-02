@@ -3,7 +3,7 @@ import React from "react";
 import clashofclansLogo from "../../public/clashofclans-logo.png";
 import tubboLogo from "../../public/tubbo-logo.png";
 import mayuwiiLogo from "../../public/Mayuwii-logo.png";
-import Image from "next/image"
+import Image from "next/image";
 
 const FollowedChannels = () => {
   const channels = [
@@ -12,22 +12,22 @@ const FollowedChannels = () => {
       logo: clashofclansLogo,
       name: "ClashOfClans",
       status: "Offline",
-      alt: "Clash of clans Logo"
+      alt: "Clash of clans Logo",
     },
     {
       id: 2,
       logo: tubboLogo,
       name: "Tubbo",
       status: "Offline",
-      alt: "Tubbo Logo"
+      alt: "Tubbo Logo",
     },
     {
       id: 3,
       logo: mayuwiiLogo,
       name: "Mayuwii",
       status: "Offline",
-      alt: "Mayuwii Logo"
-    }
+      alt: "Mayuwii Logo",
+    },
   ];
 
   return (

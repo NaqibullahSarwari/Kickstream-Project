@@ -10,8 +10,8 @@ const Sidebar = () => {
         <div className="flex justify-start">
           <h1 className="text-white text-lg font-normal pt-2 pb-2">For You</h1>
         </div>
-        <FollowedChannels/>
-        <LiveChannels/>
+        <FollowedChannels />
+        <LiveChannels />
       </aside>
     </>
   );

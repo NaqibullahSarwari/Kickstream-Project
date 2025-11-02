@@ -11,22 +11,22 @@ const LiveChannels = () => {
       logo: clashofclansLogo,
       name: "ClashOfClans",
       viewers: "12k",
-      alt: "Clash of clans Logo"
+      alt: "Clash of clans Logo",
     },
     {
       id: 2,
       logo: tubboLogo,
       name: "Tubbo",
       viewers: "2.3m",
-      alt: "Tubbo Logo"
+      alt: "Tubbo Logo",
     },
     {
       id: 3,
       logo: mayuwiiLogo,
       name: "Mayuwii",
       viewers: "12.3k",
-      alt: "Mayuwii Logo"
-    }
+      alt: "Mayuwii Logo",
+    },
   ];
 
   return (
@@ -52,7 +52,9 @@ const LiveChannels = () => {
             </h1>
             <div className="flex justify-center items-center flex-shrink-0">
               <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full mr-1"></div>
-              <h1 className="text-white text-xs sm:text-sm">{channel.viewers}</h1>
+              <h1 className="text-white text-xs sm:text-sm">
+                {channel.viewers}
+              </h1>
             </div>
           </div>
         ))}

@@ -69,7 +69,9 @@ const StreamTab = ({ streamerData }) => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-3">
             <div className="flex items-center space-x-3 sm:space-x-4 w-full sm:w-auto">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-bold text-base sm:text-lg">L</span>
+                <span className="text-white font-bold text-base sm:text-lg">
+                  L
+                </span>
               </div>
               <div className="min-w-0 flex-1">
                 <div className="flex items-center">
@@ -92,12 +94,16 @@ const StreamTab = ({ streamerData }) => {
                     </div>
                   )}
                 </div>
-                <h2 className="text-white text-base sm:text-lg truncate">{streamer.title}</h2>
+                <h2 className="text-white text-base sm:text-lg truncate">
+                  {streamer.title}
+                </h2>
                 <div className="flex items-center mt-1">
                   <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded mr-2">
                     LIVE
                   </span>
-                  <p className="text-gray-300 text-sm truncate">{streamer.game}</p>
+                  <p className="text-gray-300 text-sm truncate">
+                    {streamer.game}
+                  </p>
                 </div>
               </div>
             </div>
@@ -161,7 +167,9 @@ const StreamTab = ({ streamerData }) => {
       </div>
       <div className="w-full lg:w-96 bg-[#18181B] flex flex-col border-t lg:border-t-0 lg:border-l border-gray-700 max-h-[600px] lg:max-h-none">
         <div className="p-3 sm:p-4 border-b border-gray-700">
-          <h3 className="text-white font-bold text-base sm:text-lg">Stream Chat</h3>
+          <h3 className="text-white font-bold text-base sm:text-lg">
+            Stream Chat
+          </h3>
           <div className="flex items-center mt-2 text-xs sm:text-sm text-gray-400 overflow-x-auto">
             <span className="mr-4 whitespace-nowrap">👑 allina... 🎁 50</span>
             <span className="mr-4 whitespace-nowrap">🛡️ se... 🎁 40</span>
@@ -181,8 +189,12 @@ const StreamTab = ({ streamerData }) => {
         <div className="flex-1 overflow-y-auto px-3 sm:px-4 space-y-2">
           <div className="flex items-start space-x-2">
             <span className="text-gray-400 text-xs flex-shrink-0">7:39</span>
-            <span className="text-yellow-400 font-bold text-xs sm:text-sm flex-shrink-0">amoneyxc:</span>
-            <span className="text-white text-xs sm:text-sm break-words">WE TAKE THAT</span>
+            <span className="text-yellow-400 font-bold text-xs sm:text-sm flex-shrink-0">
+              amoneyxc:
+            </span>
+            <span className="text-white text-xs sm:text-sm break-words">
+              WE TAKE THAT
+            </span>
           </div>
 
           <div className="flex items-start space-x-2">
@@ -190,7 +202,9 @@ const StreamTab = ({ streamerData }) => {
             <span className="text-orange-400 font-bold text-xs sm:text-sm flex-shrink-0">
               🔸 👑 milikarose:
             </span>
-            <span className="text-white text-xs sm:text-sm break-words">accidented the guy LMFAO</span>
+            <span className="text-white text-xs sm:text-sm break-words">
+              accidented the guy LMFAO
+            </span>
           </div>
 
           <div className="flex items-start space-x-2">
@@ -198,7 +212,9 @@ const StreamTab = ({ streamerData }) => {
             <span className="text-pink-400 font-bold text-xs sm:text-sm flex-shrink-0">
               🌸 ProfessorVic:
             </span>
-            <span className="text-white text-xs sm:text-sm break-words">idk I can't find u</span>
+            <span className="text-white text-xs sm:text-sm break-words">
+              idk I can't find u
+            </span>
           </div>
 
           <div className="flex items-start space-x-2">
@@ -227,7 +243,9 @@ const StreamTab = ({ streamerData }) => {
 
           <div className="flex items-start space-x-2">
             <span className="text-gray-400 text-xs flex-shrink-0">7:43</span>
-            <span className="text-yellow-400 font-bold text-xs sm:text-sm flex-shrink-0">amoneyxc:</span>
+            <span className="text-yellow-400 font-bold text-xs sm:text-sm flex-shrink-0">
+              amoneyxc:
+            </span>
             <span className="text-white text-xs sm:text-sm break-words">
               I'm gonna go make buldak I better not come back to a closed stream
               or hidden screen
@@ -236,8 +254,12 @@ const StreamTab = ({ streamerData }) => {
 
           <div className="flex items-start space-x-2">
             <span className="text-gray-400 text-xs flex-shrink-0">7:43</span>
-            <span className="text-yellow-400 font-bold text-xs sm:text-sm flex-shrink-0">amoneyxc:</span>
-            <span className="text-white text-xs sm:text-sm break-words">Ok? Ok</span>
+            <span className="text-yellow-400 font-bold text-xs sm:text-sm flex-shrink-0">
+              amoneyxc:
+            </span>
+            <span className="text-white text-xs sm:text-sm break-words">
+              Ok? Ok
+            </span>
           </div>
 
           <div className="text-center py-4">
@@ -265,12 +287,18 @@ const StreamTab = ({ streamerData }) => {
 
         <div className="p-3 sm:p-4 border-t border-gray-700 bg-[#1a1a1d]">
           <div className="flex items-center justify-between mb-2">
-            <h4 className="text-white font-bold text-sm sm:text-base">Plus Goal</h4>
+            <h4 className="text-white font-bold text-sm sm:text-base">
+              Plus Goal
+            </h4>
             <span className="text-gray-400 text-sm">ℹ️</span>
           </div>
           <div className="mb-2">
-            <h5 className="text-white font-semibold text-sm sm:text-base">{streamer.goal.title}</h5>
-            <p className="text-gray-300 text-xs sm:text-sm">{streamer.goal.description}</p>
+            <h5 className="text-white font-semibold text-sm sm:text-base">
+              {streamer.goal.title}
+            </h5>
+            <p className="text-gray-300 text-xs sm:text-sm">
+              {streamer.goal.description}
+            </p>
           </div>
           <div className="bg-gray-700 rounded-full h-2 mb-2">
             <div
