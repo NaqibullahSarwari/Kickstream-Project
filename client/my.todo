@@ -18,6 +18,98 @@
 [] Build a good-looking, awosome frontend with animations, design, transition and so on
 [] Build the Video Description Feature
 
+**DAY 1 — Bringing the Stream to Life**
+
+- [ ]  Configure RTMP ingestion + FFmpeg pipeline
+- [ ]  Connect OBS and test stream playback with hls.js
+- [ ]  Build a clean, minimalist video player UI
+
+---
+
+**DAY 2 — Real-Time Energy**
+
+- [ ]  Implement socket.io chat backend.
+- [ ]  Design Twitch-style chat interface (React).
+- [ ]  Add emoji reactions + smooth animations.
+
+*Reflection:* “Today, I made the internet talk back.”
+
+---
+
+**DAY 3 — Streamer Power**
+
+- [ ]  Stream dashboard (“Go Live” + analytics)
+- [ ]  Stream discovery feed (live/offline users)
+- [ ]  Polish design — transitions, hover effects
+
+*Reward:* Record a 10-second clip of your dashboard. Post it on X or LinkedIn as “Building my own live platform.”
+
+---
+
+**DAY 4 — The WOW Layer**
+
+- [ ]  Integrate Kafka/Redis for analytics
+- [ ]  Build interactive overlays (polls, emoji bursts)
+- [ ]  Style everything like a professional platform
+
+*Reflection:* “If Twitch didn’t exist, this would be my version.”
+
+---
+
+**DAY  5— Zapier Clone Foundations**
+
+- [ ]  Setup backend (NestJS + Redis + PostgreSQL)
+- [ ]  Frontend builder layout (React + DnD Kit)
+- [ ]  Design workflow schema + first mock trigger
+
+*Reward:* Watch a YouTube video about Zapier architecture — feed your curiosity.
+
+---
+
+**DAY 6 — Build Real Automation**
+
+**Goal:** Experience your first “IF → THEN” running.
+
+- [ ]  Backend execution engine (jobs, triggers).
+- [ ]  Drag-drop workflow UI + execution flow visualization
+- [ ]  Connect example integration (mock Gmail → Slack).
+
+*Reflection:* “I just built a mini Zapier. That’s insane.”
+
+---
+
+### **DAY 7 — Intelligence Layer**
+
+**Goal:** Make it smarter than a clone
+
+- [ ]  Integrate sentiment-based AI trigger
+- [ ]  Add webhook support for external APIs
+- [ ]  Dockerize & deploy to test server
+
+*Reward:* Take 20 mins to imagine real businesses using your system.
+
+---
+
+### **DAY 8 — Build the AI Health Companion**
+
+**Goal:** Create something people could *actually* use.
+
+- [ ]  React Native/Expo setup + backend link
+- [ ]  Build daily check-in + AI response system
+- [ ]  Style it like a cozy, friendly app
+
+*Reflection:* “Today I made something that could improve lives.”
+
+---
+
+### **Celebration 🎉**
+
+- [ ]  Add landing pages + project screenshots.
+- [ ]  Record short demo videos or GIFs
+- [ ]  Write your portfolio descriptions & reflect on growth
+
+*Reward:* Create a “Dev Hero” board with screenshots of all projects — proof of what 8 days of flow can do.
+
 Main colors used in the porject.
 1. #0E0E10 - Background
 2. #26262C - Sidebar 
@@ -27,3 +119,82 @@ Main colors used in the porject.
 5. #8B8B8F - Sidebar Text Color
 5. #A970FF 
 6. #2e2e33
+
+
+
+
+
+
+
+
+import React from "react";
+import {
+  MessageCircle,
+  Key,
+  Users,
+  Camera,
+  ArrowLeft,
+  Clapperboard,
+  Focus,
+} from "lucide-react";
+import Link from "next/link"
+
+const Dashboard = () => {
+  return (
+    <>
+      <div className="bg-[#0E0E10]">
+        <aside className="bg-[#0E0E10] space-y-6 pl-8 pt-8 w-1/5 h-screen border-r-3 border-white">
+          <div className="hover:text-gray-300">
+            <Link href="/dashboard/analytics" className="flex items-center space-x-4">
+            <Camera />
+            <button className="text-white text-lg font-semibold hover:text-gray-300">
+              Dashboard
+            </button>
+            <ArrowLeft className="text-white" />
+            </Link>
+          </div>
+          <div className="hover:text-gray-300">
+           <Link href="/dashboard/golive" className="flex items-center space-x-4">
+           <Clapperboard />
+            <button className="text-white text-lg font-semibold hover:text-gray-300">
+              Go Live
+            </button>
+           </Link>
+          </div>
+          <div className="flex items-center space-x-4 hover:text-gray-300">
+          <Link href="/dashboard/stream" className="flex items-center space-x-4">
+          <Focus className=""/>
+            <button className="text-white text-lg font-semibold hover:text-gray-300">
+             Stream
+            </button>
+          </Link>
+          </div>
+          <div className="hover:text-gray-300">
+          <Link href="/dashboard/keys" className="flex items-center space-x-4">
+          <Key />
+          <button className="text-white text-lg font-semibold hover:text-gray-300">Keys</button>
+          </Link>
+          </div>
+          <div className="hover:text-gray-300">
+           <Link href="/dashboard/setting" className="flex items-center space-x-4">
+           <MessageCircle />
+           <button className="text-white text-lg font-semibold hover:text-gray-300">Chat Setting</button>
+           </Link>
+          </div>
+          <div className="hover:text-gray-300">
+            <Link href="/dashboard/community" className="flex items-center space-x-4">
+            <Users />
+            <button className="text-white text-lg font-semibold hover:text-gray-300">
+              Community
+            </button>
+            </Link>
+          
+          </div>
+        </aside>
+        <div></div>
+      </div>
+    </>
+  );
+};
+
+export default Dashboard;
