@@ -5,60 +5,61 @@ import mayuwiiLogo from "../../public/Mayuwii-logo.png";
 import Image from "next/image";
 
 const LiveChannels = () => {
+  const channels = [
+    {
+      id: 1,
+      logo: clashofclansLogo,
+      name: "ClashOfClans",
+      viewers: "12k",
+      alt: "Clash of clans Logo"
+    },
+    {
+      id: 2,
+      logo: tubboLogo,
+      name: "Tubbo",
+      viewers: "2.3m",
+      alt: "Tubbo Logo"
+    },
+    {
+      id: 3,
+      logo: mayuwiiLogo,
+      name: "Mayuwii",
+      viewers: "12.3k",
+      alt: "Mayuwii Logo"
+    }
+  ];
+
   return (
-    <div>
-      <h1 className="text-white font-semibold text-md pt-4 pb-3">
+    <div className="pr-2">
+      <h1 className="text-white font-semibold text-sm sm:text-md pt-4 pb-3">
         Live Channels
       </h1>
-      <div>
-        <div className="bg-[#26262C] h-10 w-50 flex justify-between items-center">
-          <div className="flex justify-start">
-            <Image
-              src={clashofclansLogo}
-              alt="Clash of clans Logo"
-              className="h-8 w-8 rounded-4xl"
-            />
+      <div className="space-y-2">
+        {channels.map((channel) => (
+          <div
+            key={channel.id}
+            className="bg-[#26262C] hover:bg-[#2f2f35] h-10 w-full flex justify-between items-center px-2 rounded cursor-pointer transition-colors"
+          >
+            <div className="flex justify-start flex-shrink-0">
+              <Image
+                src={channel.logo}
+                alt={channel.alt}
+                className="h-7 w-7 sm:h-8 sm:w-8 rounded-full"
+              />
+            </div>
+            <h1 className="text-white font-semibold text-xs sm:text-sm truncate px-2 flex-1 text-left">
+              {channel.name}
+            </h1>
+            <div className="flex justify-center items-center flex-shrink-0">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full mr-1"></div>
+              <h1 className="text-white text-xs sm:text-sm">{channel.viewers}</h1>
+            </div>
           </div>
-          <h1 className="text-white font-semibold text-sm">ClashOfClans</h1>
-          <div className="flex justify-center items-center">
-            <div className="w-2 h-2 bg-red-500 rounded-full mr-1"></div>
-            <h1 className="text-white text-sm">12k</h1>
-          </div>
-        </div>
+        ))}
       </div>
-      <div>
-        <div className="bg-[#26262C] h-10 w-50 flex justify-between items-center">
-          <div className="flex justify-start">
-            <Image
-              src={tubboLogo}
-              alt="Clash of clans Logo"
-              className="h-8 w-8 rounded-4xl"
-            />
-          </div>
-          <h1 className="text-white font-semibold text-sm">Tubbo</h1>
-          <div className="flex justify-center items-center">
-            <div className="w-2 h-2 bg-red-500 rounded-full mr-1"></div>
-            <h1 className="text-white text-sm">2.3m</h1>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div className="bg-[#26262C] h-10 w-50 flex justify-between items-center">
-          <div className="flex justify-start">
-            <Image
-              src={mayuwiiLogo}
-              alt="Clash of clans Logo"
-              className="h-8 w-8 rounded-4xl"
-            />
-          </div>
-          <h1 className="text-white font-semibold text-sm">Mayuwii</h1>
-          <div className="flex justify-center items-center">
-            <div className="w-2 h-2 bg-red-500 rounded-full mr-1"></div>
-            <h1 className="text-white text-sm">12.3k</h1>
-          </div>
-        </div>
-      </div>
-      <h1 className="text-[#A970FF] pt-1 text-sm font-normal">Shore More</h1>
+      <h1 className="text-[#A970FF] hover:text-white pt-3 text-xs sm:text-sm font-normal cursor-pointer transition-colors">
+        Show More
+      </h1>
     </div>
   );
 };
