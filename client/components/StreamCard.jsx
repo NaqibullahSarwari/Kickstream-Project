@@ -61,12 +61,12 @@ const StreamCard = () => {
   const SingleStreamCard = ({ stream }) => {
     return (
       <Link href={`/${stream.slug}`} className="block">
-        <div className="bg-[#18181B] rounded-lg overflow-hidden max-w-sm hover:bg-[#1f1f23] transition-colors duration-200 cursor-pointer">
+        <div className="bg-[#18181B] rounded-lg overflow-hidden w-full hover:bg-[#1f1f23] transition-colors duration-200 cursor-pointer">
           <div className="relative group">
             <Image
               src={stream.thumbnail}
               alt={stream.title}
-              className="w-full h-48 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+              className="w-full h-40 sm:h-48 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
             />
             {stream.isLive && (
               <div className="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
@@ -82,11 +82,11 @@ const StreamCard = () => {
               {stream.title}
             </h3>
             <div className="flex items-center mb-2">
-              <p className="text-gray-300 text-sm hover:text-[#A970FF] transition-colors duration-200">
+              <p className="text-gray-300 text-sm hover:text-[#A970FF] transition-colors duration-200 truncate">
                 {stream.streamer}
               </p>
               {stream.isVerified && (
-                <div className="ml-1 w-4 h-4 bg-purple-600 rounded-full flex items-center justify-center">
+                <div className="ml-1 w-4 h-4 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg
                     className="w-2.5 h-2.5 text-white"
                     fill="currentColor"
@@ -101,7 +101,7 @@ const StreamCard = () => {
                 </div>
               )}
             </div>
-            <p className="text-gray-400 text-sm mb-3 hover:text-[#A970FF] transition-colors duration-200">
+            <p className="text-gray-400 text-sm mb-3 hover:text-[#A970FF] transition-colors duration-200 truncate">
               {stream.game}
             </p>
             <div className="flex flex-wrap gap-1">
@@ -121,12 +121,12 @@ const StreamCard = () => {
   };
 
   return (
-    <div className="bg-[#0E0E10] p-6">
-      <h2 className="text-white text-lg font-semibold mb-4">
+    <div className="bg-[#0E0E10] p-4 sm:p-6">
+      <h2 className="text-white text-base sm:text-lg font-semibold mb-4">
         Live channels we think you'll like
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
         {streams.map((stream) => (
           <SingleStreamCard key={stream.id} stream={stream} />
         ))}
