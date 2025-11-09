@@ -11,7 +11,7 @@ export default function DashboardPage() {
             Total Views
           </h2>
           <p className="text-2xl sm:text-3xl font-bold text-purple-500">
-            15,234
+            12,324
           </p>
         </div>
         <div className="bg-[#18181B] hover:bg-[#1f1f23] p-4 sm:p-6 rounded-lg transition-colors">
