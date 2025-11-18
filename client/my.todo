@@ -18,13 +18,6 @@
 [] Build a good-looking, awosome frontend with animations, design, transition and so on
 [] Build the Video Description Feature
 
-**DAY 1 — Bringing the Stream to Life**
-
-- [ ]  Configure RTMP ingestion + FFmpeg pipeline
-- [ ]  Connect OBS and test stream playback with hls.js
-- [ ]  Build a clean, minimalist video player UI
-
-
 
 Main colors used in the porject.
 1. #0E0E10 - Background
