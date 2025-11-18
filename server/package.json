@@ -1,17 +1,18 @@
 {
+  "name": "server",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
   "dependencies": {
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "mongoose": "^8.19.2"
-  },
-  "name": "server",
-  "version": "1.0.0",
-  "main": "index.js",
-  "devDependencies": {},
-  "scripts": {
-    "dev": "nodemon server.js"
+    "livekit-server-sdk": "^2.14.1",
+    "mongoose": "^8.20.0"
   },
   "keywords": [],
   "author": "",
