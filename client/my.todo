@@ -24,14 +24,6 @@
 - [ ]  Connect OBS and test stream playback with hls.js
 - [ ]  Build a clean, minimalist video player UI
 
----
-
-
-**DAY 3 — Streamer Power**
-
-- [ ]  Stream dashboard (“Go Live” + analytics)
-- [ ]  Stream discovery feed (live/offline users)
-- [ ]  Polish design — transitions, hover effects
 
 
 Main colors used in the porject.
