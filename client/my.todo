@@ -26,15 +26,6 @@
 
 ---
 
-**DAY 2 — Real-Time Energy**
-
-- [ ]  Implement socket.io chat backend.
-- [ ]  Design Twitch-style chat interface (React).
-- [ ]  Add emoji reactions + smooth animations.
-
-*Reflection:* “Today, I made the internet talk back.”
-
----
 
 **DAY 3 — Streamer Power**
 
