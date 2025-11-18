@@ -1,22 +1,6 @@
 ### Todo List
 
-[x] Complete Installation
-[] Build the Register/Login Page
-[x] Build the Navar
-[x] Build the Sidebar
-[x] Build the Home Section
-[x] Build the Watching stream section
-[x] Build the Dashboard Page
-    [] Build the Stream Section
-    [] Build the Keys Section
-    [] Build the Chat Section
-    [] Build the Community Section
-[x] Build the Go Live Button
-[x] Custom Video Ingestion & Encoding Pipeline 
-[] Analytics & Monitoring Pipeline 
-[] Interactive Streaming (Live Reactivity Layer)
-[] Build a good-looking, awosome frontend with animations, design, transition and so on
-[] Build the Video Description Feature
+
 
 Main colors used in the porject.
 1. #0E0E10 - Background
